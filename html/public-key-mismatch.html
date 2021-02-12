@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Crack JWT's secret key</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Crack JWT's secret key</h1>
+      <h2>RS256 to HS256</h2>
+      <div class="form-group">
+        <label for="token">JWT full token</label>
+        <textarea
+          class="form-control"
+          name="token"
+          id="token"
+          cols="30"
+          rows="4"
+          placeholder="Paste full JWT"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="input-file">Upload <code>.pem</code> file:</label><br />
+        <input type="file" id="input-file" class="mb-1" />
+      </div>
+
+      <textarea id="content-target" class="form-control" readonly></textarea>
+      <br />
+      <button
+        type="button"
+        class="btn btn-success"
+        id="btn-submit-crack"
+        style="width: 100%;"
+      >
+        Generate!
+      </button>
+      <br /><br />
+
+      <div id="new-token" style="word-wrap:break-word;" class=""></div>
+    </div>
+
+    <script></script>
+
+    <!-- Crypto script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-sha256.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/enc-base64.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/enc-utf8.min.js"></script>
+    <!-- Cracking script -->
+    <script src="../js/crack3.js"></script>
+  </body>
+</html>
